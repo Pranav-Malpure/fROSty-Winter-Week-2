@@ -5,4 +5,7 @@ So till now you have learnt how to control our bot and guide it through the maze
 
 ## ArUco Markers
 ArUco marker is a 5x5 grid of black and white squares which looks something like this:
-![This is an image]()
+
+![This is an image](https://github.com/Pranav-Malpure/fROSty-Winter-Week-2/blob/main/Aruco%20image.jpeg)
+
+
