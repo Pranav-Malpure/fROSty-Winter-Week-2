@@ -25,3 +25,17 @@ Let’s see whether you have understood the above info, find out what number doe
 Alright, so now we understand what ArUco markers are, we need to find a way so that they are read by the bot through a camera fitted on it. This can be achieved through OpenCV.
 
 ## OpenCV
+
+Firstly we need to install OpenCV in your systems. Please refer to below link for instructions to download OpenCV. Build it from source rather than using pre-built Binaries. This installation can take some time so have patience.
+
+Here's the [link](https://docs.opencv.org/4.5.0/d2/de6/tutorial_py_setup_in_ubuntu.html)
+
+
+
+
+
+
+
+
+
+
