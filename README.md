@@ -8,4 +8,5 @@ ArUco marker is a 5x5 grid of black and white squares which looks something like
 
 ![This is an image](https://github.com/Pranav-Malpure/fROSty-Winter-Week-2/blob/main/Aruco%20image.jpeg)
 
+Let us breakdown this marker into grid. Also note that ArUco markers have a black border of 1 unit around them.
 
