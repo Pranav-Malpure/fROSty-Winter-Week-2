@@ -12,11 +12,11 @@ In an ArUco marker, black box represents the number 0 and white box represents t
 
 ![This is an image](https://github.com/Pranav-Malpure/fROSty-Winter-Week-2/blob/main/Images/Grid%20for%20aruco%20marker.png)
 
-Here the second and fourth column are the data bits, and the rest three are parity bits. Parity bits are usually used as a error detection and in this case they also help out in figuring out the orientation of the marker. The Parity1 and Parity3 are even parity bits and Parity2 is odd parity bit. You may read more about parity bits [here](https://en.wikipedia.org/wiki/Parity_bit). But we aren't concerned with parity bits now, so it is fine if you don't understand what they are. 
+Here the second and fourth column are the data bits, and the rest three are parity bits. Parity bits are usually used as a error detection and in this case they also help out in figuring out the orientation of the marker. The Parity1 and Parity3 are even parity bits and Parity2 is odd parity bit. You may read more about parity bits [here](https://en.wikipedia.org/wiki/Parity_bit). It's fine if you don't understand what parity bits are, as that part is taken care by the computer.
 
 Finally, coming back to data bits(read them horizontally), the above grid displays the binary number 1010001010, which is 650 in decimal representation.
 
-Let’s see whether you have understood the above info, find out what number does the below ArUco marker represent.(Remember, we only need the second and fourth column to find out)
+Let’s see whether you have understood the above info, find out what number does the below ArUco marker represent.(Remember, the second and fourth columns are data bits.)
 
 ![This is an image](https://github.com/Pranav-Malpure/fROSty-Winter-Week-2/blob/main/Images/Example%20aruco.png)
 
