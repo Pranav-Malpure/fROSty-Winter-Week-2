@@ -43,10 +43,13 @@ In our task we will be mainly using ArUco, an OpenCV based library for detecting
   Since we do not require the ROS environment for this section, we recommend you using the **Visual Code Studio** that we installed in Week_0. Using the terminal for practicing code might make reading and editing code a nightmare. We have also provided you with some sample images uploaded in the git folder (images_for_cv2) to practice these commands for yourself.
 
 * #### Setting up VS code
-  1)	Create a folder named opencv_tutorials in your user directory
-  2)	Download the folder (images_for_cv2) and transfer it to your Ubuntu desktop and paste it in opencv_tutorials.
-  3)	Launch VSC and in the explorer’s tab open the newly created folder and create a .py file to write your practice code.
-  4)	Open the Extensions tab on the left side of your screen. Search and install the python extension.
+  
+  ```bash
+  cd ~/catkin_ws/src
+  git clone https://github.com/kaushaljadhav512/opencv_tutorials
+  ```
+  *	Launch VSC and in the explorer’s tab open the newly created folder and create a .py file to write your practice code.
+  *	Open the Extensions tab on the left side of your screen. Search and install the python extension.
 
 Congrats! Now we are all set and can start with learning OpenCV!
 
