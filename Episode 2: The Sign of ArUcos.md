@@ -36,13 +36,13 @@ In our task we will be mainly using ArUco, an OpenCV based library for detecting
 
 ### Installation and Setup
 
-* Installing OpenCV </br>
+* #### Installing OpenCV </br>
   
   Firstly you need to install OpenCV in your systems. Please refer to this [link](https://docs.opencv.org/4.5.0/d2/de6/tutorial_py_setup_in_ubuntu.html) for instructions to download OpenCV. Build it from source rather than using pre-built Binaries. This installation can take some time so have patience.
 
   Since we do not require the ROS environment for this section, we recommend you using the **Visual Code Studio** that we installed in Week_0. Using the terminal for practicing code might make reading and editing code a nightmare. We have also provided you with some sample images uploaded in the git folder (images_for_cv2) to practice these commands for yourself.
 
-* Setting up VS code
+* #### Setting up VS code
   1)	Create a folder named opencv_tutorials in your user directory
   2)	Download the folder (images_for_cv2) and transfer it to your Ubuntu desktop and paste it in opencv_tutorials.
   3)	Launch VSC and in the explorer’s tab open the newly created folder and create a .py file to write your practice code.
@@ -63,9 +63,241 @@ Congrats! Now we are all set and can start with learning OpenCV!
     This method loads an image from the specified file as a NumPy array with each cell as a pixel. </br>
     _Syntax_ – ```cv2.imread( path ,  flag )``` </br>
     _Parameters_ - </br>
-                  **path:** A string representing the path of the image to be read. </br>
-                  **flag (optional):** It specifies the way in which image should be read. It’s default value is ```cv2.IMREAD_COLOR```.</br>
-                  Refer [here](https://docs.opencv.org/3.4/d8/d6a/group__imgcodecs__flags.html) for more details.
+    **path:** A string representing the path of the image to be read. </br>
+    **flag (optional):** It specifies the way in which image should be read. It’s default value is ```cv2.IMREAD_COLOR```.</br>
+    Refer [here](https://docs.opencv.org/3.4/d8/d6a/group__imgcodecs__flags.html) for more details.
+
+* #### Displaying an image </br>
+    
+    Displays the image in a new GUI window.</br>
+    _Syntax_ – ```cv2.imshow( window_name, code )``` </br>
+    _Parameters_ – </br>
+    **window_name:** A string representing the name of the window in which image to be displayed. This will be displayed on the Title Bar of the window. </br>
+    **image:** It is the image that is to be displayed. (or rather the numpy array to be displayed)
+
+* #### Converting colour spaces </br>
+    
+    This method is used to convert an image from one colour space to another. </br>
+    If you are unfamiliar with colour spaces, just remember… colour spaces are specific organization of colours. </br>
+    Example:  </br>
+      **Grayscale:** uses shades of grey to represent intensity </br>
+      **RGB:** stores individual values of Red Green Blue and an alpha channel to show transparency </br>
+      **HSV (Hue, saturation, value):** an alternate form of RGB colour space that is similar to human vision perception and helpful for image identification.
+
+    _Syntax_ - ```cv2.cvtColor( source , conversion_code)``` </br>
+    _Parameters_ - </br>
+    **source:** the image to be converted, a numpy array. </br>
+    **conversion_code:** It follows the pattern sourceCode2destinationCode </br>
+    The full list of codes and its corresponding details can be found by following this [link](https://docs.opencv.org/master/d8/d01/group__imgproc__color__conversions.html).</br>
+
+    If this is slightly confusing, don’t worry most of the times we only use the above three mentioned spaces.
+  
+ * #### Saving an image
+    
+    Saves the image (numpy array) in the local directory.</br>
+    _Syntax_- ```cv2.imwrite( filename , image )``` </br>
+    _Parameters_- </br>
+    **filename:** A string representing the file name. The filename must include image format like .jpg, .png, etc. </br>
+    **image:**  It is the image array that is to be saved. </br>
+    
+    _**Caution:** Before saving the file using this command, make sure that the image is in BGR format or you might get an unexpected error._
+
+ * #### Destroying created GUI windows
+    
+    _Syntax_- ```cv2.destroyAllWindows()``` </br>
+    Destroys all opened windows </br>
+    
+    _Syntax_- ```cv2.destroyWindow(name)``` </br>
+    _Parameters_- </br>
+    **name:** name of the window </br>
+    Only destroys specified name window
+    
+ * ####	The Wait-Key function
+    
+    _Syntax_- ```cv2.waitKey(delay)``` </br>
+    _Parameters_ - </br>
+    **delay:** Delay in milliseconds. 0 is the special value that means infinitely. </br>
+    Returns ASCII value of key pressed (32 bit integer)
+
+    _**Some side note:** </br>
+    If you've used ASCII you might wonder how ASCII (8 bit) can be compared with 32 bit integer. </br>
+    Since you use only the last 8 bits from the 32 bits, we do a bitwise AND operation (&). </br>
+    Let's see an example with this in action_
+    ```bash
+    if cv2.waitKey(0) & 0xFF == ord('q'):
+        # Perform action here
+    ```
+    _Here we extract the last 8 bits using the & operation and then compare it with the ASCII value of q. </br>
+    The ```ord()``` python function returns an integer representing the Unicode character. </br>_
+    
+    _If you are still confused, do checkout [this answer](https://stackoverflow.com/questions/35372700/whats-0xff-for-in-cv2-waitkey1) on stackoverflow._
+
+### Let us see an example which implements all of the above basic commands that we learned
+
+    ```python
+      
+      #importing the cv library
+      import cv2
+
+      #reading the image from path _____ and saving it in the form of a numpy array of name img 
+      img = cv2.imread(‘images_for_cv2/img.jpg’)
+
+      #changing the color space from BGR to GRAY and saving it in a new array variable called gray
+      gray = cv2.cvtColor(img, cv.COLOR_BGR2GRAY)
+
+      #saving the gray array as gray_img.jpg
+      cv2.imwrite(‘gray_img.jpg’, gray)
+
+      #Displaying the gray scaled image in a window named gray_img
+      cv2.imshow(‘gray_img’, gray)
+
+      #destroys all windows if the key ‘s’ is pressed
+      if cv2.waitKey(0) & 0xFF==ord('s'):
+              cv2.destroyAllWindows()   
+    
+    ```
+
+**Note:** The following 3 modules are not explicitly used in this workshop and are thus a part of Optional Learning.
+ 
+### Module 2: Drawing and Texting on Images
+
+  * ####	Creating a blank image by using a zero array from numpy
+    
+    _Syntax_ - ```name = np.zeros((height, width, no. of colour channels), dtype='uint8')``` </br>
+    The data type ‘uint8’ means 8bit unsigned integer which ranges from 0 to 255. </br>
+    _Example_ - 
+    ```python
+    blank = np.zeros((500,500,3), dtype='uint8')
+    
+    ```
+  * ####	Painting the image a certain colour
+
+    _Syntax_ - ```name[ y1 : y2 , x1 : x2 ] = B,G,R```    
+    _Example_ -  
+    ```python
+    #creates a green rectangle ranging from height 200 to 300 and width 300 to 400.
+    blank[200:300, 300:400] = 0,255,0
+    
+    ```
+  * #### 	Drawing shapes on images
+
+    1) Rectangle: 
+        
+        _Syntax_ - ```cv2. rectangle(image to draw on, from where, to where, colour, thickness of borders)``` </br>
+        _Example_ - 
+        ```python
+        cv2.rectangle(blank, (0,0), (100,100), (0,255,0), thickness=-1)
+        ```
+        Using ‘```thickness=-1```’ shape fills the rectangle.
+    
+    2) Circle:
+        
+        _Syntax_ - ```cv2.circle(image to draw on, centre(x,y), radius, colour(B,G,R), thickness)``` </br>
+
+    3) Line:
+        
+        _Syntax_ – ```cv2.line(image to draw on, starting point(x,y), ending point(x,y), colour(B,G,R), thickness)``` </br>
+
+    4) Text:
+        
+        _Syntax_ – ```cv2.putTEXT(image to draw on, string, destination point, font, font size, colour, thickness)``` </br>
+        _Example_ - 
+        ```python
+        cv.putTEXT(blank, 'Hello', (255,255), cv.FONT_HERSHEY_TRIPLEX, 1.0, (0,255,0), 2)
+        
+        ```
+  
+  * ####   Practice problems:
+
+    1)	Using the functions that we learned in this module, recreate this iconic ```wallpaper_modified.jpg``` by drawing on ```wallpaper.jpg```.
+    
+    2)	Help Sherlock unlock Adler’s phone by using the ```putTEXT``` command over the textboxes. I hope you already know the password
+
+### Module 3: Arithmetic Operations on Images
+  
+  * ####	Addition of Images:
+      
+      Two images can be added pixel by pixel (or rather element by element of their numpy arrays) if they are of the same size. </br>
+      
+      _Syntax_: ```cv2.add( img1 , img2 )``` </br>
+      _Parameters_: **img1** and **img2** are the two images to be added. </br>
+      _Example code_:
+      
+      ```python
+      # importing the necessary libraries
+      import cv2 
+      import numpy as np 
+
+      # reading the two images to be added 
+      # in variables image1 and image2
+      image1 = cv2.imread('add1.jpg') 
+      image2 = cv2.imread('add2.jpg')
+
+      # adding image1 and image2 and saving 
+      # them in variable Sum_of_images
+
+      Sum_of_images = cv2.add(image1, image2)
+
+      # displaying the sum
+      cv2.imshow(‘Sum_of_images’, Sum)
+
+      # exiting windows on press of ‘s’ key
+      if cv2.waitKey(0) & 0xff == ord(‘s’): 
+          cv2.destroyAllWindows() 
+      ```
+  * ####	Weighted Addition of Images:
+
+      This function is just a modification to the addition function that might be helpful in some cases. </br>
+      
+      _Syntax_: ```cv2.addWeighted( img_1 , alpha , img_2 , beta , gamma)``` </br>
+      _Parameters_: </br>
+      **img_1, img_2:** the images to be added </br>
+      **alpha, beta:** float values ranging from 0 to 1 that represent the weight of each image in the final image. </br>
+      **gamma:** Scalar added to each sum. It is set to 0 for most practical purposes. (A bit beyond the scope of this documentation for now). </br>
+      
+      Also remember, alpha + beta = 1 always. </br>
+      Thus, added_image = (img_1)*alpha + (img_2)*beta + gamma
+
+  * ####	Subtraction of Images:
+      
+      _Syntax_: ```cv2.subtract( img1, img2)``` </br>
+      _Parameters_: **img1** and **img2** are the two images to be subtracted. </br>
+      _Example code_:
+      
+      ```python
+      # importing the necessary libraries
+      import cv2 
+      import numpy as np 
+
+      # reading the two images to be subtracted
+      # in variables image1 and image2
+      image1 = cv2.imread('sub1.jpg') 
+      image2 = cv2.imread('sub2.jpg')
+
+      # subtracting image2 from image1 and saving 
+      # them in variable Diff_of_images
+
+      Diff_of_images = cv2.subtract(image1, image2)
+
+      # displaying the difference
+      cv2.imshow(‘Diff_of_images’, Sum)
+
+      # exiting windows on press of ‘s’ key
+      if cv2.waitKey(0) & 0xff == ord(‘s’):
+        cv2.destroyAllWindows()
+
+      ```
+
+
+
+
+
+
+
+    
+    
+    
+    
 
 
 
