@@ -30,11 +30,42 @@ Alright, so now we understand what ArUco markers are, we need to find a way so t
 
 ## OpenCV
 
-Firstly you need to install OpenCV in your systems. Please refer to below link for instructions to download OpenCV. Build it from source rather than using pre-built Binaries. This installation can take some time so have patience.
+OpenCV (Open-Source Computer Vision Library) is an open-source library that includes several hundreds of computer vision algorithms. It helps us in performing various operations on images very easily.
 
-Here's the [link](https://docs.opencv.org/4.5.0/d2/de6/tutorial_py_setup_in_ubuntu.html)
+In our task we will be mainly using ArUco, an OpenCV based library for detecting the markers and navigating through the base. Nevertheless, some basic knowledge of OpenCV might be very useful for some of your future projects in Gazebo and Rviz.
 
+### Installation and Setup
 
+* Installing OpenCV </br>
+  
+  Firstly you need to install OpenCV in your systems. Please refer to this [link](https://docs.opencv.org/4.5.0/d2/de6/tutorial_py_setup_in_ubuntu.html) for instructions to download OpenCV. Build it from source rather than using pre-built Binaries. This installation can take some time so have patience.
+
+  Since we do not require the ROS environment for this section, we recommend you using the **Visual Code Studio** that we installed in Week_0. Using the terminal for practicing code might make reading and editing code a nightmare. We have also provided you with some sample images uploaded in the git folder (images_for_cv2) to practice these commands for yourself.
+
+* Setting up VS code
+  1)	Create a folder named opencv_tutorials in your user directory
+  2)	Download the folder (images_for_cv2) and transfer it to your Ubuntu desktop and paste it in opencv_tutorials.
+  3)	Launch VSC and in the explorer’s tab open the newly created folder and create a .py file to write your practice code.
+  4)	Open the Extensions tab on the left side of your screen. Search and install the python extension.
+
+Congrats! Now we are all set and can start with learning OpenCV!
+
+### Module 1: Basic Commands
+
+*	#### Importing the cv2 library </br>
+    
+    We import OpenCV with the following command: ```import cv2``` </br>
+    We also include some other packages which we might be using soon.
+    ```import numpy as np```
+  
+*	#### Reading a saved image on your device </br>
+
+    This method loads an image from the specified file as a NumPy array with each cell as a pixel. </br>
+    _Syntax_ – ```cv2.imread( path ,  flag )``` </br>
+    _Parameters_ - </br>
+                  **path:** A string representing the path of the image to be read. </br>
+                  **flag (optional):** It specifies the way in which image should be read. It’s default value is ```cv2.IMREAD_COLOR```.</br>
+                  Refer [here](https://docs.opencv.org/3.4/d8/d6a/group__imgcodecs__flags.html) for more details.
 
 
 
