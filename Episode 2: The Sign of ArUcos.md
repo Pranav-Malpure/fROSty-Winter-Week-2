@@ -319,7 +319,8 @@ aruco_dict = aruco.Dictionary_get(aruco.DICT_5x5_250)
 ```
 This is an example of a dictionary of 250 ArUco markers of size 5x5. 
 
-Let us say the image we have got from the camera is stored in the variable `img`. (We will discuss how to get the image from camera in ROS later) 
+Let us say the image we have got from the camera is stored in the variable `img`. (We will discuss how to get the image from camera in ROS later) \
+Also remember that it is okay to have more than one ArUco markers in an image.
 
 Ok, so now lets convert this image into grayscale image and store it into another variable `gray`.
 ```
@@ -336,5 +337,13 @@ corners, ids, _ = aruco.detectMarkers(gray, aruco_dict, parameters = Parameters)
 ```
 Note that we have used " _ " above because
 
-So let us see what are the parameters 
+So let us see what are the parameters:
+- gray : Grayscale image of the sample to be detected.
+- aruco_dict : The dictionary of which the ArUco marker is a part of.
+- Parameters : This is the object returned by the aruco.DetectorParameters_create()
+
+What this returns is:
+- ids : This is a list, which contains the ArUco id according to the dictionary; if there are N markers in the image, then the size of the list is N.
+- corners : This is a numpy array of the 2D coordinates of the corners of the markers. For each marker, the four corners are returned in their _**original**_ order, i.e. clockwise starting from top right(This info will come handy later, remember it). If there are N markers in the image, then the size of the array(i.e. _corners_) is Nx4.
+
 
