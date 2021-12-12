@@ -38,15 +38,23 @@ Alright, so now we understand what ArUco markers are, we need to find a way so t
 
 OpenCV (Open-Source Computer Vision Library) is an open-source library that includes several hundreds of computer vision algorithms. It helps us in performing various operations on images very easily.
 
-In our task we will be mainly using ArUco, an OpenCV based library for detecting the markers and navigating through the base. Nevertheless, some basic knowledge of OpenCV might be very useful for some of your future projects in Gazebo and Rviz.
+In our task we will be mainly using ArUco, an OpenCV based library for detecting the markers and navigating through the maze. Nevertheless, some basic knowledge of OpenCV might be very useful for some of your future projects in Gazebo and Rviz.
 
 ### Installation and Setup
 
 * #### Installing OpenCV </br>
   
-  Firstly you need to install OpenCV in your systems. Please refer to this [link](https://docs.opencv.org/4.5.0/d2/de6/tutorial_py_setup_in_ubuntu.html) for instructions to download OpenCV. Build it from source rather than using pre-built Binaries. This installation can take some time so have patience.
+ Execute 
+ ```bash
+ pip --version
+ ```
+ Ensure that pip is configured with python3.xx . If not you may have to use (```pip2 --version``` or ```pip3 --version```)
+If it shwos 'ImportError: No module named pip' or similar error, you need to install pip by executing
+ ```bash
+ pip install pip
+ ```
 
-  Since we do not require the ROS environment for this section, we recommend you using the **Visual Code Studio** that we installed in Week_0. Using the terminal for practicing code might make reading and editing code a nightmare. We have also provided you with some sample images uploaded in the git folder (images_for_cv2) to practice these commands for yourself.
+ Firstly you need to install OpenCV in your systems. Please refer to this [link](https://docs.opencv.org/4.5.0/d2/de6/tutorial_py_setup_in_ubuntu.html) for instructions to download OpenCV. Build it from source rather than using pre-built Binaries. This installation can take some time so have patience.
 
 * #### Setting up VS code
   
@@ -54,7 +62,7 @@ In our task we will be mainly using ArUco, an OpenCV based library for detecting
   cd ~/catkin_ws/src
   git clone https://github.com/kaushaljadhav512/opencv_tutorials
   ```
-  *	Launch VSC and in the explorer’s tab open the newly created folder and create a .py file to write your practice code.
+  *	Launch VSC and in the explorer’s tab open the newly created folder (opencv_tutorials) and create a .py file to write your practice code.
   *	Open the Extensions tab on the left side of your screen. Search and install the python extension.
 
 Congrats! Now we are all set and can start with learning OpenCV!
