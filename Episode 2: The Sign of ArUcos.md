@@ -93,7 +93,7 @@ Congrats! Now we are all set and can start with learning OpenCV!
       **BGR:** stores individual values of Red Green Blue and an alpha channel to show transparency </br>
       **HSV (Hue, saturation, value):** an alternate form of RGB colour space that is similar to human vision perception and helpful for image identification. </br>
 
-    <img src="https://github.com/Pranav-Malpure/fROSty-Winter-Week-2/blob/main/Images/GRAY_img.jpg" width="200" height = "200"> <img src="https://github.com/Pranav-Malpure/fROSty-Winter-Week-2/blob/main/Images/BGR_img.png" width="200" height = "200"> <img src="https://github.com/Pranav-Malpure/fROSty-Winter-Week-2/blob/main/Images/HSV_img.jpg" width="200" height = "200"> </br>
+    <p align="center"> <img src="https://github.com/Pranav-Malpure/fROSty-Winter-Week-2/blob/main/Images/GRAY_img.jpg" width="200" height = "200"> &nbsp; &nbsp; <img src="https://github.com/Pranav-Malpure/fROSty-Winter-Week-2/blob/main/Images/BGR_img.png" width="200" height = "200"> &nbsp; &nbsp; <img src="https://github.com/Pranav-Malpure/fROSty-Winter-Week-2/blob/main/Images/HSV_img.jpg" width="200" height = "200"> </p> </br>
     
     _Syntax_ - ```cv2.cvtColor( source , conversion_code)``` </br>
     _Parameters_ - </br>
@@ -426,4 +426,6 @@ mkdir -p ~/catkin_ws/src/cv_bridge/scripts
 gedit ~/catkin_ws/src/cv_bridge/scripts/cv_bridge_example.py
 ```
 
+### That's the end of Week 2! Cheers!
+<img src="https://github.com/Pranav-Malpure/fROSty-Winter-Week-2/blob/main/Images/sherlock_toast.jpg" height="300" width="450">
 
