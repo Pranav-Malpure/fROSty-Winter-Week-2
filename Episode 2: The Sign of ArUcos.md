@@ -488,6 +488,7 @@ Execute the following command in another tab.
 rosrun aruco_detection detect_marker.py
 ```
 On executing You should be able to see following screen.
+
 <img src="Images/cv_bridge_1.jpg" width=600 height=300>
 
 Have a look at the detect_marker.py file
@@ -616,7 +617,9 @@ roslaunch aruco_detection maze_aruco.launch
 roslaunch aruco_detection spawn_turtlebot3.launch
 ```
 Upon execution, the following screen should be visible.
+
 <img src="Images/maze.jpg" width=600 height=300>
+
 Cool !
 
 How will you come out of this maze, which is surrounded by walls from all the sides ?
@@ -639,5 +642,6 @@ Now, go and Solve the maze. :)
 ## add meme moriarty's maze solved by sherlock , moriarty defeat
 
 ### That's the end of Week 2! Cheers!
+
 <img src="https://github.com/Pranav-Malpure/fROSty-Winter-Week-2/blob/main/Images/sherlock_toast.jpg" height="300" width="450">
 
