@@ -343,7 +343,7 @@ So let us see what are the parameters:
 - Parameters : This is the object returned by the aruco.DetectorParameters_create()
 
 What this returns is:
-- ids : This is a list, which contains the ArUco id according to the dictionary; if there are N markers in the image, then the size of the list is N.
+- ids : This is a list, which contains the ArUco id according to the dictionary; if there are N markers in the image, then size of the list is N.
 - corners : This is a numpy array of the 2D coordinates of the corners of the markers. For each marker, the four corners are returned in their _**original**_ order, i.e. clockwise starting from top right(This info will come handy later, remember it). If there are N markers in the image, then the size of the array(i.e. _corners_) is Nx4.
 
 
