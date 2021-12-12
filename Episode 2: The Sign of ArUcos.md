@@ -184,7 +184,7 @@ Congrats! Now we are all set and can start with learning OpenCV!
 
     1) Rectangle: 
         
-        _Syntax_ - ```cv2. rectangle(image to draw on, from where, to where, colour, thickness of borders)``` </br>
+        _Syntax_ - ```cv2.rectangle(image to draw on, from where, to where, colour, thickness of borders)``` </br>
         _Example_ - 
         ```python
         cv2.rectangle(blank, (0,0), (100,100), (0,255,0), thickness=-1)
