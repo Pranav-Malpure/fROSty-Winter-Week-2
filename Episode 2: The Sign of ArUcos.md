@@ -14,7 +14,8 @@ In an ArUco marker, black box represents the number 0 and white box represents t
 
 Here the second and fourth column are the data bits, and the rest three are parity bits. Parity bits are usually used as a error detection and in this case they also help out in figuring out the orientation of the marker. The Parity1 and Parity3 are even parity bits and Parity2 is odd parity bit. You may read more about parity bits [here](https://en.wikipedia.org/wiki/Parity_bit). Below is the order according to which they are calculated.
 
-![Image for parity bits code](https://github.com/Pranav-Malpure/fROSty-Winter-Week-2/blob/main/Images/Parity%20bits%20order.png)
+
+<img src="https://github.com/Pranav-Malpure/fROSty-Winter-Week-2/blob/main/Images/Parity%20bits%20order.png" data-canonical-src="https://github.com/Pranav-Malpure/fROSty-Winter-Week-2/blob/main/Images/Parity%20bits%20order.png" width="600" />
 
 It's fine if you don't understand what parity bits are, as that part is taken care by the computer.
 
