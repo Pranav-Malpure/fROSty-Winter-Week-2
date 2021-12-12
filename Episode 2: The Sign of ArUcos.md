@@ -679,6 +679,8 @@ AruCo will guide you along the way to solve the maze.
 
 Execute ```rosrun aruco_detection detect_marker.py```. Open new terminal and execute ```roslaunch aruco_detection turtlebot3_teleop_key.launch``` to control bot.
 
+If you are curious about how these walls are created, don't worry. We will go deeper into these things in coming week.
+
 Now, go and Solve the maze. :)
 
 ### That's the end of Week 2! Cheers!
