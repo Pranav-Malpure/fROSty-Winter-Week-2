@@ -53,8 +53,24 @@ If it shwos 'ImportError: No module named pip' or similar error, you need to ins
  ```bash
  pip install pip
  ```
+Execute
+```bash
+pip install opencv-contrib-python
+pip install opencv-python
+sudo apt-get install python-opencv
+```
+Use ```pip2``` or ```pip3``` in the above commands, if python3 is configured with one of them.
 
- Firstly you need to install OpenCV in your systems. Please refer to this [link](https://docs.opencv.org/4.5.0/d2/de6/tutorial_py_setup_in_ubuntu.html) for instructions to download OpenCV. Build it from source rather than using pre-built Binaries. This installation can take some time so have patience.
+Open Python IDLE (or IPython) (type ```python3``` in Terminal) and type following codes in Python terminal.
+```bash
+import cv2 as cv
+print(cv.__version__)
+```
+If the results are printed out without any errors, congratulations !!! You have installed OpenCV-Python successfully.
+
+You may build OpenCV from source. (Lengthy process)
+
+Please refer to this [link](https://docs.opencv.org/4.5.0/d2/de6/tutorial_py_setup_in_ubuntu.html). This installation can take some time so have patience.
 
 * #### Setting up VS code
   
