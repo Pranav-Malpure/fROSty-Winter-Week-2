@@ -134,7 +134,7 @@ Congrats! Now we are all set and can start with learning OpenCV!
     If you've used ASCII you might wonder how ASCII (8 bit) can be compared with 32 bit integer. </br>
     Since you use only the last 8 bits from the 32 bits, we do a bitwise AND operation (&). </br>
     Let's see an example with this in action_
-    ```bash
+    ```python
     if cv2.waitKey(0) & 0xFF == ord('q'):
         # Perform action here
     ```
@@ -368,7 +368,7 @@ if cv2.waitKey(0) & 0xFF==ord('s'):
 
 Since now you have a basic idea of OpenCV, let us see, how can we use it to detect ArUcos. By detecting, here our objective is to detect the position of the corners of the marker and ID of the marker(this is different from the data bits number, read on to find out). We will use the python library - ArUcos. In the header of your python script, add the following libraries:
 
-```
+```python
 import numpy as np
 import math
 import cv2
@@ -376,7 +376,7 @@ import cv2.aruco
 ```
 `aruco` library has predefined dictionaries of markers, which it uses to detect the given markers. We have to create an instance of these dictionaries before we proceed. It is done using:
 
-```
+```python
 aruco_dict = aruco.Dictionary_get(aruco.DICT_5x5_250)
 ```
 This is an example of a dictionary of 250 ArUco markers of size 5x5. 
@@ -385,16 +385,16 @@ Let us say the image we have got from the camera is stored in the variable `img`
 Also remember that it is okay to have more than one ArUco markers in an image.
 
 Ok, so now lets convert this image into grayscale image and store it into another variable `gray`.
-```
+```python
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 ```
 Next we create an instance of a class, which includes all the options that can be customized during the marker detection process:
-```
+```python
 Parameters = aruco.DetectorParameters_create()
 ```
 And finally, we unpack parameters of the marker through:
 
-```
+```python
 corners, ids, _ = aruco.detectMarkers(gray, aruco_dict, parameters = Parameters)
 ```
 Note that we have used " _ " above because
@@ -429,25 +429,25 @@ gedit ~/catkin_ws/src/cv_bridge/scripts/cv_bridge_example.py
 ## Proceeding to detect ArUco..
 
 Open the Terminal and run following commands-
-```
+```bash
 cd ~/catkin_ws/src
 git clone https://github.com/Tejas2910/aruco_detection/tree/python3_noetic
 cd ~/catkin_ws
 catkin_make
 ```
 Now you have a package aruco_detection, let's run it.
-```
+```bash
 roslaunch aruco_detection maze_aruco.launch
 ```
 Let's spwan the Turtlebot3 by running follwing command in another tab
-```
+```bash
 roslaunch aruco_detection spawn_turtlebot3.launch
 ```
 You can see ArUco marker in front of TurtleBot3(waffle_pi model).
 Why we used waffle_pi ? Guess... Remember Investigation 1 of Episode 1. 
 
 Yes, you guessed correctly. Let's check by executing ``` rostopic list ``` in another tab.
-```
+```bash
 /clock
 /cmd_vel
 /gazebo/link_states
@@ -484,7 +484,7 @@ Run ```rviz``` in Terminal. Click on Add button, Under tab **By topic** add ```/
 Now, we will subscribe ```/turtlebot3_waffle_pi/camera/image_raw``` topic to convert ROS Image data to OpenCV Image data using **cv_bridge**.
 
 Execute the following command in another tab.
-```
+```bash
 rosrun aruco_detection detect_marker.py
 ```
 On executing You should be able to see following screen.
@@ -611,7 +611,7 @@ Open **maze_aruco.launch** file in launch folder and replace empty.world with ma
 </launch>
 ```
 Execute following command 
-```
+```bash
 roslaunch aruco_detection maze_aruco.launch
 roslaunch aruco_detection spawn_turtlebot3.launch
 ```
