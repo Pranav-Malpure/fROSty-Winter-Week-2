@@ -137,28 +137,27 @@ Congrats! Now we are all set and can start with learning OpenCV!
 
 ### Let us see an example which implements all of the above basic commands that we learned
 
-      ```python
-      # importing the cv library
-      import cv2
+```python
+  # importing the cv library
+import cv2
+  
+  # reading the image from path _____ and saving it in the form of a numpy array of name img 
+img = cv2.imread('images_for_cv2/img.jpg')
 
-      # reading the image from path _____ and saving it in the form of a numpy array of name img 
-      img = cv2.imread(‘images_for_cv2/img.jpg’)
+  # changing the color space from BGR to GRAY and saving it in a new array variable called gray
+gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
-      # changing the color space from BGR to GRAY and saving it in a new array variable called gray
-      gray = cv2.cvtColor(img, cv.COLOR_BGR2GRAY)
+  # saving the gray array as gray_img.jpg
+cv2.imwrite('gray_img.jpg', gray)
 
-      # saving the gray array as gray_img.jpg
-      cv2.imwrite(‘gray_img.jpg’, gray)
+  # Displaying the gray scaled image in a window named gray_img
+cv2.imshow('gray_img', gray)
 
-      # Displaying the gray scaled image in a window named gray_img
-      cv2.imshow(‘gray_img’, gray)
+  # destroys all windows if the key ‘s’ is pressed
+if cv2.waitKey(0) & 0xFF==ord('s'):
+  cv2.destroyAllWindows()
+```  
 
-      # destroys all windows if the key ‘s’ is pressed
-      if cv2.waitKey(0) & 0xFF==ord('s'):
-          cv2.destroyAllWindows()
-      ```
-      
-**Note:** The following 3 modules are not explicitly used in this workshop and are thus a part of Optional Learning.
  
 ### Module 2: Drawing and Texting on Images
 
@@ -214,6 +213,8 @@ Congrats! Now we are all set and can start with learning OpenCV!
     
     2)	Help Sherlock unlock Adler’s phone by using the ```putTEXT``` command over the textboxes. I hope you already know the password
 
+**Note:** The following 2 modules are not explicitly used in this workshop and are thus a part of Optional Learning.
+
 ### Module 3: Arithmetic Operations on Images
   
   * ####	Addition of Images:
@@ -231,8 +232,8 @@ Congrats! Now we are all set and can start with learning OpenCV!
 
       # reading the two images to be added 
       # in variables image1 and image2
-      image1 = cv2.imread('add1.jpg') 
-      image2 = cv2.imread('add2.jpg')
+      image1 = cv2.imread('images_for_cv2/add1.jpg') 
+      image2 = cv2.imread('images_for_cv2/add2.jpg')
 
       # adding image1 and image2 and saving 
       # them in variable Sum_of_images
@@ -240,11 +241,11 @@ Congrats! Now we are all set and can start with learning OpenCV!
       Sum_of_images = cv2.add(image1, image2)
 
       # displaying the sum
-      cv2.imshow(‘Sum_of_images’, Sum)
+      cv2.imshow('Sum_of_images', Sum_of_images)
 
       # exiting windows on press of ‘s’ key
-      if cv2.waitKey(0) & 0xff == ord(‘s’): 
-          cv2.destroyAllWindows() 
+      if cv2.waitKey(0) & 0xff == ord('s'): 
+          cv2.destroyAllWindows()  
       ```
   * ####	Weighted Addition of Images:
 
@@ -272,8 +273,8 @@ Congrats! Now we are all set and can start with learning OpenCV!
 
       # reading the two images to be subtracted
       # in variables image1 and image2
-      image1 = cv2.imread('sub1.jpg') 
-      image2 = cv2.imread('sub2.jpg')
+      image1 = cv2.imread('images_for_cv2/sub1.jpg') 
+      image2 = cv2.imread('images_for_cv2/sub2.jpg')
 
       # subtracting image2 from image1 and saving 
       # them in variable Diff_of_images
@@ -281,10 +282,10 @@ Congrats! Now we are all set and can start with learning OpenCV!
       Diff_of_images = cv2.subtract(image1, image2)
 
       # displaying the difference
-      cv2.imshow(‘Diff_of_images’, Sum)
+      cv2.imshow('Diff_of_images', Diff_of_images)
 
       # exiting windows on press of ‘s’ key
-      if cv2.waitKey(0) & 0xff == ord(‘s’):
+      if cv2.waitKey(0) & 0xff == ord('s'):
         cv2.destroyAllWindows()
 
       ```
@@ -296,13 +297,14 @@ Congrats! Now we are all set and can start with learning OpenCV!
   
   Let us first read and observe these two images: </br>
   ```python
-    import cv2
-    img1 = cv2.imread(“yinyang_square.jpg”)
-    img2 = cv2.imread(“yinyang_circle.jpg”)
-    cv2.imshow(“yinyang_square”, img1)
-    cv2.imshow(“yinyang_circle”, img2)
-    if cv2.waitKey(0) & 0xff == ord(‘s’):
-      cv2.destroyAllWindows()
+  import cv2
+
+  img1 = cv2.imread('images_for_cv2/yinyang_square.jpg')
+  img2 = cv2.imread('images_for_cv2/yinyang_circle.jpg')
+  cv2.imshow('yinyang_square', img1)
+  cv2.imshow('yinyang_circle', img2)
+  if cv2.waitKey(0) & 0xff == ord('s'):
+    cv2.destroyAllWindows()
   ```
   
   Now we are ready to operate on these two images. </br>
