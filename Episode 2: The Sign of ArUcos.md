@@ -84,6 +84,7 @@ Congrats! Now we are all set and can start with learning OpenCV!
 * #### Converting colour spaces </br>
     
     This method is used to convert an image from one colour space to another. </br>
+    Color spaces is a pretty important concept in Image processing and Image detection
     If you are unfamiliar with colour spaces, just remember… colour spaces are specific organization of colours. </br>
     Example:  </br>
       **Grayscale:** uses shades of grey to represent intensity </br>
@@ -349,6 +350,9 @@ if cv2.waitKey(0) & 0xFF==ord('s'):
   #### Some really cool tutorials on OpenCV that we found on Youtube: 
   https://www.youtube.com/watch?v=oXlwWbU8l2o&t=7032s </br>
   https://www.youtube.com/watch?v=01sAkU_NvOY&t=109s
+  
+  #### A well explained documentation on color spaces:
+  https://realpython.com/python-opencv-color-spaces/#what-are-color-spaces
 
 
 
