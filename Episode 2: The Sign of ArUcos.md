@@ -1,7 +1,10 @@
-# fROSty-Winter-Episode-2: (The Sign of ArUcos)
-Episode 2 of ROS workshop conducted by ERC
+# Episode 2 - The Sign of ArUcos
+
+## Introduction
 
 So till now you have learnt how to control our bot and guide it through the maze using your keyboard. But when we are thinking about challenging Moriarty, we can't take any chances! We have to ensure that the bot is able to navigate it's own way through the maze using some clues present at each nodes of the maze. Holmes has deduced the nature of the clues that would be present. According to him, they would be of the form of markers known as ArUco markers. We need to train our bot to identify and process these. But before that, what exactly is this 'ArCuo markers'? Let's find out...
+
+## Table of Contents
 
 ## ArUco Markers
 ArUco marker is a grid of black and white squares, typically a 5x5 grid, which looks something like this:
@@ -30,6 +33,8 @@ Let’s see whether you have understood the above info, find out what number doe
 Alright, so now we understand what ArUco markers are, we need to find a way so that they are read by the bot through a camera fitted on it. This can be achieved through OpenCV.
 
 ## OpenCV
+
+
 
 OpenCV (Open-Source Computer Vision Library) is an open-source library that includes several hundreds of computer vision algorithms. It helps us in performing various operations on images very easily.
 
@@ -138,26 +143,27 @@ Congrats! Now we are all set and can start with learning OpenCV!
 
 ### Let us see an example which implements all of the above basic commands that we learned
 
-      ```python
-      # importing the cv library
-      import cv2
+```python
+  # importing the cv library
+import cv2
+  
+  # reading the image from path _____ and saving it in the form of a numpy array of name img 
+img = cv2.imread('images_for_cv2/img.jpg')
 
-      # reading the image from path _____ and saving it in the form of a numpy array of name img 
-      img = cv2.imread(‘images_for_cv2/img.jpg’)
+  # changing the color space from BGR to GRAY and saving it in a new array variable called gray
+gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
-      # changing the color space from BGR to GRAY and saving it in a new array variable called gray
-      gray = cv2.cvtColor(img, cv.COLOR_BGR2GRAY)
+  # saving the gray array as gray_img.jpg
+cv2.imwrite('gray_img.jpg', gray)
 
-      # saving the gray array as gray_img.jpg
-      cv2.imwrite(‘gray_img.jpg’, gray)
+  # Displaying the gray scaled image in a window named gray_img
+cv2.imshow('gray_img', gray)
 
-      # Displaying the gray scaled image in a window named gray_img
-      cv2.imshow(‘gray_img’, gray)
+  # destroys all windows if the key ‘s’ is pressed
+if cv2.waitKey(0) & 0xFF==ord('s'):
+  cv2.destroyAllWindows()
+```  
 
-      # destroys all windows if the key ‘s’ is pressed
-      if cv2.waitKey(0) & 0xFF==ord('s'):
-          cv2.destroyAllWindows()
-      ```
       
 **Note:** The following 3 modules are not explicitly used in this workshop and are thus a part of Optional Learning.
  
@@ -232,8 +238,8 @@ Congrats! Now we are all set and can start with learning OpenCV!
 
       # reading the two images to be added 
       # in variables image1 and image2
-      image1 = cv2.imread('add1.jpg') 
-      image2 = cv2.imread('add2.jpg')
+      image1 = cv2.imread('images_for_cv2/add1.jpg') 
+      image2 = cv2.imread('images_for_cv2/add2.jpg')
 
       # adding image1 and image2 and saving 
       # them in variable Sum_of_images
@@ -241,12 +247,13 @@ Congrats! Now we are all set and can start with learning OpenCV!
       Sum_of_images = cv2.add(image1, image2)
 
       # displaying the sum
-      cv2.imshow(‘Sum_of_images’, Sum)
+      cv2.imshow('Sum_of_images', Sum_of_images)
 
       # exiting windows on press of ‘s’ key
-      if cv2.waitKey(0) & 0xff == ord(‘s’): 
-          cv2.destroyAllWindows() 
+      if cv2.waitKey(0) & 0xff == ord('s'): 
+          cv2.destroyAllWindows()  
       ```
+
   * ####	Weighted Addition of Images:
 
       This function is just a modification to the addition function that might be helpful in some cases. </br>
@@ -273,8 +280,8 @@ Congrats! Now we are all set and can start with learning OpenCV!
 
       # reading the two images to be subtracted
       # in variables image1 and image2
-      image1 = cv2.imread('sub1.jpg') 
-      image2 = cv2.imread('sub2.jpg')
+      image1 = cv2.imread('images_for_cv2/sub1.jpg') 
+      image2 = cv2.imread('images_for_cv2/sub2.jpg')
 
       # subtracting image2 from image1 and saving 
       # them in variable Diff_of_images
@@ -282,25 +289,70 @@ Congrats! Now we are all set and can start with learning OpenCV!
       Diff_of_images = cv2.subtract(image1, image2)
 
       # displaying the difference
-      cv2.imshow(‘Diff_of_images’, Sum)
+      cv2.imshow('Diff_of_images', Diff_of_images)
 
       # exiting windows on press of ‘s’ key
-      if cv2.waitKey(0) & 0xff == ord(‘s’):
+      if cv2.waitKey(0) & 0xff == ord('s'):
         cv2.destroyAllWindows()
 
       ```
-
-
-
-
-
-
-
-    
-    
-    
-    
-
+	### Module 4: Bitwise Operations on Images
+	  
+	  To better understand this module, we need the two images (yinyang_square and yinyang_circle) uploaded in the ```images_for_cv2``` folder. </br>
+	  Just as when we performed arithmetic operations, in bitwise operations the images should be of the same pixel size. </br>
+	  
+	  Let us first read and observe these two images: </br>
+	  
+	  ```python
+	  import cv2
+	
+	  img1 = cv2.imread('images_for_cv2/yinyang_square.jpg')
+	  img2 = cv2.imread('images_for_cv2/yinyang_circle.jpg')
+	  cv2.imshow('yinyang_square', img1)
+	  cv2.imshow('yinyang_circle', img2)
+	  if cv2.waitKey(0) & 0xff == ord('s'):
+	    cv2.destroyAllWindows()
+	  ```
+	  
+	  Now we are ready to operate on these two images. </br>
+	  The syntax and the usage for all of these functions is pretty intuitive and easy to interpret. But do give each of them a try and see the results for yourself. </br>
+	  
+	  * ####	AND Operation (Conjunction)
+	      
+	      _Syntax_ - ```cv2.bitwise_and( img1 , img2 )``` </br>
+	      _Parameters_ – *img1, img2:* the two images to be conjuncted
+	      
+	  * ####	OR Operation (Disjunction)
+	      
+	      _Syntax_ - ```cv2.bitwise_or( img1 , img2 )``` </br>
+	      _Parameters_ – *img1, img2:* the two images to be disjuncted
+	      
+	  * ####	XOR Operation
+	      
+	      _Syntax_ - ```cv2.bitwise_xor( img1 , img2 )``` </br>
+	      _Parameters_ – *img1, img2:* the two images to be XORed
+	      
+	  * ####	NOT Operation (Complement)
+	      
+	      _Syntax_ - ```cv2.bitwise_not( img )``` </br>
+	      _Parameters_ – *img:* the image to be complemented
+	 
+	 ### Moving forward with OpenCV
+	  
+	  You might be wondering the practical applications of using Arithmetic and Bitwise Operations on images. But they have a very specific use in watermarks and logos. Do check out the [official documentation](https://docs.opencv.org/4.x/d0/d86/tutorial_py_image_arithmetics.html) of OpenCV to gain some insights on this.
+	  
+	  **This covers our brief introduction to OpenCV.** </br>
+	  If you are interested further, we do recommend to explore ```Image Processing```.
+	  
+	  #### Link to the official python-tutorials: 
+	  https://docs.opencv.org/4.x/d2/d96/tutorial_py_table_of_contents_imgproc.html
+	  
+	  #### geeksforgeeks also provides some amazing tutorials on OpenCV: 
+	  https://www.geeksforgeeks.org/opencv-python-tutorial/#images
+	  
+	  #### Some really cool tutorials on OpenCV that we found on Youtube: 
+	  https://www.youtube.com/watch?v=oXlwWbU8l2o&t=7032s </br>
+	  https://www.youtube.com/watch?v=01sAkU_NvOY&t=109s
 
 
 ## Detecting ArUco Markers 
@@ -346,5 +398,23 @@ So let us see what are the parameters:
 What this returns is:
 - ids : This is a list, which contains the ArUco id according to the dictionary; if there are N markers in the image, then size of the list is N.
 - corners : This is a numpy array of the 2D coordinates of the corners of the markers. For each marker, the four corners are returned in their _**original**_ order, i.e. clockwise starting from top right(This info will come handy later, remember it). If there are N markers in the image, then the size of the array(i.e. _corners_) is Nx4.
+
+## cv_bridge
+
+Now that we are familiar with the basics of OpenCV, ArUco and ROS, we can finally talk about integrating these two and performing various operations on images such as image detection.</br>
+
+
+Unfortunately, in ROS, the format of the images being processed (ROS image Message) is quite different than that used in OpenCV (cv::Mat). This is where the library  cv_bridge comes to the rescue! </br>
+We create a publisher-subscriber model to import and export images out of ROS into OpenCV and back into ROS. 
+
+
+### Let us start with a simple example.
+
+
+We create a directory named ```cv_bridge``` and create a python file named ```cv_bridge_example.py```
+```bash
+mkdir -p ~/catkin_ws/src/cv_bridge/scripts
+gedit ~/catkin_ws/src/cv_bridge/scripts/cv_bridge_example.py
+```
 
 
