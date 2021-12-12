@@ -155,30 +155,7 @@ Congrats! Now we are all set and can start with learning OpenCV!
 
       # destroys all windows if the key ‘s’ is pressed
       if cv2.waitKey(0) & 0xFF==ord('s'):
-          cv2.destroyAllWindows()   
-      ```
-      
-      ```python
-      # importing the necessary libraries
-      import cv2 
-      import numpy as np 
-
-      # reading the two images to be added 
-      # in variables image1 and image2
-      image1 = cv2.imread('add1.jpg') 
-      image2 = cv2.imread('add2.jpg')
-
-      # adding image1 and image2 and saving 
-      # them in variable Sum_of_images
-
-      Sum_of_images = cv2.add(image1, image2)
-
-      # displaying the sum
-      cv2.imshow(‘Sum_of_images’, Sum)
-
-      # exiting windows on press of ‘s’ key
-      if cv2.waitKey(0) & 0xff == ord(‘s’): 
-          cv2.destroyAllWindows() 
+          cv2.destroyAllWindows()
       ```
       
 **Note:** The following 3 modules are not explicitly used in this workshop and are thus a part of Optional Learning.
