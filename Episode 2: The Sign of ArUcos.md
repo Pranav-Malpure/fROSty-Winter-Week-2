@@ -137,8 +137,7 @@ Congrats! Now we are all set and can start with learning OpenCV!
 
 ### Let us see an example which implements all of the above basic commands that we learned
 
-    ```python
-      
+      ```python
       #importing the cv library
       import cv2
 
@@ -158,7 +157,7 @@ Congrats! Now we are all set and can start with learning OpenCV!
       if cv2.waitKey(0) & 0xFF==ord('s'):
               cv2.destroyAllWindows()   
     
-    ```
+      ```
 
 **Note:** The following 3 modules are not explicitly used in this workshop and are thus a part of Optional Learning.
  
