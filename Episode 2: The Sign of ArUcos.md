@@ -304,7 +304,7 @@ Congrats! Now we are all set and can start with learning OpenCV!
 
 ## Detecting ArUco Markers 
 
-Since now you have a basic idea of OpenCV, let us see, how can we use it to detect ArUcos. We will use the python library - ArUcos. In the header of your python script, add the following libraries:
+Since now you have a basic idea of OpenCV, let us see, how can we use it to detect ArUcos. By detecting, here our objective is to detect the position of the corners of the marker and ID of the marker(this is different from the data bits number, read on to find out). We will use the python library - ArUcos. In the header of your python script, add the following libraries:
 
 ```
 import numpy as np
