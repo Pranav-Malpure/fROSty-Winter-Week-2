@@ -42,13 +42,13 @@ In our task we will be mainly using ArUco, an OpenCV based library for detecting
 
 ### Installation and Setup
 
-* #### Installing OpenCV </br>
+#### Installing OpenCV </br>
   
  Execute 
  ```bash
  pip --version
  ```
- Ensure that pip is configured with python3.xx . If not you may have to use (```pip2 --version``` or ```pip3 --version```)
+ Ensure that pip is configured with python3.xx . If not you may have to use (```pip2 --version``` or ```pip3 --version```).
 If it shwos 'ImportError: No module named pip' or similar error, you need to install pip by executing
  ```bash
  pip install pip
@@ -68,18 +68,18 @@ print(cv.__version__)
 ```
 If the results are printed out without any errors, congratulations !!! You have installed OpenCV-Python successfully.
 
-You may build OpenCV from source. (Lengthy process)
+You may Install OpenCV from source. (Lengthy process)
 
 Please refer to this [link](https://docs.opencv.org/4.5.0/d2/de6/tutorial_py_setup_in_ubuntu.html). This installation can take some time so have patience.
 
-* #### Setting up VS code
+#### Setting up VS code
   
-  ```bash
-  cd ~/catkin_ws/src
-  git clone https://github.com/kaushaljadhav512/opencv_tutorials
-  ```
-  *	Launch VSC and in the explorer’s tab open the newly created folder (opencv_tutorials) and create a .py file to write your practice code.
-  *	Open the Extensions tab on the left side of your screen. Search and install the python extension.
+```bash
+cd ~/catkin_ws/src
+git clone https://github.com/kaushaljadhav512/opencv_tutorials
+```
+Launch VSC and in the explorer’s tab open the newly created folder (opencv_tutorials) and create a .py file to write your practice code.
+Open the Extensions tab on the left side of your screen. Search and install the python extension.
 
 Congrats! Now we are all set and can start with learning OpenCV!
 
