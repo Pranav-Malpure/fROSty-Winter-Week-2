@@ -480,7 +480,7 @@ Yes, you guessed correctly. Let's check by executing ``` rostopic list ``` in an
 Camera Sensor is publishing data of ```sensor_msgs/Image``` msg type to ```/turtlebot3_waffle_pi/camera/image_raw``` topic. Let's visualize this data throgh **Rviz**.
 
 Run ```rviz``` in Terminal. Click on Add button, Under tab **By topic** add ```/turtlebot3_waffle_pi/camera/image_raw``` topic. You can see data published on this topic.  
-<img src="Images/Rviz_CameraTopic.jpg">
+<img src="Images/Rviz_CameraTopic.jpg" width=250 height=400>
 Now, we will subscribe ```/turtlebot3_waffle_pi/camera/image_raw``` topic to convert ROS Image data to OpenCV Image data using **cv_bridge**.
 
 Execute the following command in another tab.
@@ -488,7 +488,7 @@ Execute the following command in another tab.
 rosrun aruco_detection detect_marker.py
 ```
 On executing You should be able to see following screen.
-### add image ###
+<img src="Images/cv_bridge_1.jpg" width=600 height=300>
 
 Have a look at the detect_marker.py file
 
@@ -616,7 +616,7 @@ roslaunch aruco_detection maze_aruco.launch
 roslaunch aruco_detection spawn_turtlebot3.launch
 ```
 Upon execution, the following screen should be visible.
-## add image 
+<img src="Images/maze.jpg" width=600 height=300>
 Cool !
 
 How will you come out of this maze, which is surrounded by walls from all the sides ?
@@ -629,7 +629,7 @@ ArUco says hi!!
 
 AruCo will guide you along the way to solve the maze. 
 
-## add image 
+<img src="Images/aruco_guide.jpg" width=600 height=300>
 
 *Blue line* in ArUco marker in "Image Window" is indicating that magic wall 
 
