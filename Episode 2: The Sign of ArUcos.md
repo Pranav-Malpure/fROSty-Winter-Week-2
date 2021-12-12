@@ -34,7 +34,7 @@ Alright, so now we understand what ArUco markers are, we need to find a way so t
 
 ## OpenCV
 
-
+<img src="https://github.com/Pranav-Malpure/fROSty-Winter-Week-2/blob/main/Images/opencv_logo.png" width="320" height = "150">
 
 OpenCV (Open-Source Computer Vision Library) is an open-source library that includes several hundreds of computer vision algorithms. It helps us in performing various operations on images very easily.
 
@@ -90,9 +90,11 @@ Congrats! Now we are all set and can start with learning OpenCV!
     If you are unfamiliar with colour spaces, just remember… colour spaces are specific organization of colours. </br>
     Example:  </br>
       **Grayscale:** uses shades of grey to represent intensity </br>
-      **RGB:** stores individual values of Red Green Blue and an alpha channel to show transparency </br>
-      **HSV (Hue, saturation, value):** an alternate form of RGB colour space that is similar to human vision perception and helpful for image identification.
+      **BGR:** stores individual values of Red Green Blue and an alpha channel to show transparency </br>
+      **HSV (Hue, saturation, value):** an alternate form of RGB colour space that is similar to human vision perception and helpful for image identification. </br>
 
+    <img src="https://github.com/Pranav-Malpure/fROSty-Winter-Week-2/blob/main/Images/GRAY_img.jpg" width="200" height = "200"> <img src="https://github.com/Pranav-Malpure/fROSty-Winter-Week-2/blob/main/Images/BGR_img.png" width="200" height = "200"> <img src="https://github.com/Pranav-Malpure/fROSty-Winter-Week-2/blob/main/Images/HSV_img.jpg" width="200" height = "200"> </br>
+    
     _Syntax_ - ```cv2.cvtColor( source , conversion_code)``` </br>
     _Parameters_ - </br>
     **source:** the image to be converted, a numpy array. </br>
@@ -219,7 +221,11 @@ if cv2.waitKey(0) & 0xFF==ord('s'):
 
     1)	Using the functions that we learned in this module, recreate this iconic ```wallpaper_modified.jpg``` by drawing on ```wallpaper.jpg```.
     
+    <p align="center"> <img src="https://github.com/Pranav-Malpure/fROSty-Winter-Week-2/blob/main/Images/wallpaper_modified.jpg"  width="350" height="250"> </p>
+    
     2)	Help Sherlock unlock Adler’s phone by using the ```putTEXT``` command over the textboxes. I hope you already know the password
+
+    <p align="center"> <img src="https://github.com/Pranav-Malpure/fROSty-Winter-Week-2/blob/main/Images/locked.jpg"  width="200" height="350"> </p> 
 
 ### Module 3: Arithmetic Operations on Images
   
@@ -313,6 +319,7 @@ if cv2.waitKey(0) & 0xFF==ord('s'):
 	  if cv2.waitKey(0) & 0xff == ord('s'):
 	    cv2.destroyAllWindows()
 	  ```
+	  <p align="center"> <img src="https://github.com/Pranav-Malpure/fROSty-Winter-Week-2/blob/main/Images/yinyang_square.jpg" width="300" height="180"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <img src="https://github.com/Pranav-Malpure/fROSty-Winter-Week-2/blob/main/Images/yinyang_circle.jpg" width="300" height="180"> </p>
 	  
 	  Now we are ready to operate on these two images. </br>
 	  The syntax and the usage for all of these functions is pretty intuitive and easy to interpret. But do give each of them a try and see the results for yourself. </br>
@@ -338,6 +345,8 @@ if cv2.waitKey(0) & 0xFF==ord('s'):
 	      _Parameters_ – *img:* the image to be complemented
 	 
 	 ### Moving forward with OpenCV
+	  
+	  <img src="https://github.com/Pranav-Malpure/fROSty-Winter-Week-2/blob/main/Images/I%20haven't%20finished%20yet.gif" width="520" height="300">
 	  
 	  You might be wondering the practical applications of using Arithmetic and Bitwise Operations on images. But they have a very specific use in watermarks and logos. Do check out the [official documentation](https://docs.opencv.org/4.x/d0/d86/tutorial_py_image_arithmetics.html) of OpenCV to gain some insights on this.
 	  
@@ -403,10 +412,10 @@ What this returns is:
 
 Now that we are familiar with the basics of OpenCV, ArUco and ROS, we can finally talk about integrating these two and performing various operations on images such as image detection.</br>
 
-
 Unfortunately, in ROS, the format of the images being processed (ROS image Message) is quite different than that used in OpenCV (cv::Mat). This is where the library  cv_bridge comes to the rescue! </br>
 We create a publisher-subscriber model to import and export images out of ROS into OpenCV and back into ROS. 
 
+<img src="https://github.com/Pranav-Malpure/fROSty-Winter-Week-2/blob/main/Images/cvbridge3.png" width="300" height="330">
 
 ### Let us start with a simple example.
 
