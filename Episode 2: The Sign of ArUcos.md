@@ -138,26 +138,49 @@ Congrats! Now we are all set and can start with learning OpenCV!
 ### Let us see an example which implements all of the above basic commands that we learned
 
       ```python
-      #importing the cv library
+      # importing the cv library
       import cv2
 
-      #reading the image from path _____ and saving it in the form of a numpy array of name img 
+      # reading the image from path _____ and saving it in the form of a numpy array of name img 
       img = cv2.imread(‘images_for_cv2/img.jpg’)
 
-      #changing the color space from BGR to GRAY and saving it in a new array variable called gray
+      # changing the color space from BGR to GRAY and saving it in a new array variable called gray
       gray = cv2.cvtColor(img, cv.COLOR_BGR2GRAY)
 
-      #saving the gray array as gray_img.jpg
+      # saving the gray array as gray_img.jpg
       cv2.imwrite(‘gray_img.jpg’, gray)
 
-      #Displaying the gray scaled image in a window named gray_img
+      # Displaying the gray scaled image in a window named gray_img
       cv2.imshow(‘gray_img’, gray)
 
-      #destroys all windows if the key ‘s’ is pressed
+      # destroys all windows if the key ‘s’ is pressed
       if cv2.waitKey(0) & 0xFF==ord('s'):
-              cv2.destroyAllWindows()   
+          cv2.destroyAllWindows()   
       ```
+      
+      ```python
+      # importing the necessary libraries
+      import cv2 
+      import numpy as np 
 
+      # reading the two images to be added 
+      # in variables image1 and image2
+      image1 = cv2.imread('add1.jpg') 
+      image2 = cv2.imread('add2.jpg')
+
+      # adding image1 and image2 and saving 
+      # them in variable Sum_of_images
+
+      Sum_of_images = cv2.add(image1, image2)
+
+      # displaying the sum
+      cv2.imshow(‘Sum_of_images’, Sum)
+
+      # exiting windows on press of ‘s’ key
+      if cv2.waitKey(0) & 0xff == ord(‘s’): 
+          cv2.destroyAllWindows() 
+      ```
+      
 **Note:** The following 3 modules are not explicitly used in this workshop and are thus a part of Optional Learning.
  
 ### Module 2: Drawing and Texting on Images
