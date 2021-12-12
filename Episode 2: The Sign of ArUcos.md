@@ -20,11 +20,11 @@ It's fine if you don't understand what parity bits are, as that part is taken ca
 
 Finally, coming back to data bits(read them horizontally), the above grid displays the binary number 1010001010, which is 650 in decimal representation.
 
-Let’s see whether you have understood the above info, find out what number does the below ArUco marker represent.(Remember, the second and fourth columns are data bits.) You can also cross-check whether 
+Let’s see whether you have understood the above info, find out what number does the below ArUco marker represent.(Remember, the second and fourth columns are data bits.) You can also cross-check whether the parity bits are proper or not.
 
 ![This is an image](https://github.com/Pranav-Malpure/fROSty-Winter-Week-2/blob/main/Images/Example%20aruco.png)
 
-*Answer: The number represented is 100(in decimal)*
+*Answer: The number represented by the bits is 100(in decimal)*
 
 Alright, so now we understand what ArUco markers are, we need to find a way so that they are read by the bot through a camera fitted on it. This can be achieved through OpenCV.
 
@@ -304,7 +304,21 @@ Congrats! Now we are all set and can start with learning OpenCV!
 
 ## Detecting ArUco Markers 
 
-Since you have a basic idea of OpenCV, let us see, how can we use it to detect
+Since now you have a basic idea of OpenCV, let us see, how can we use it to detect ArUcos. We will use the python library - ArUcos. In the header of your python script, add the following libraries:
+
+```
+import numpy as np
+import math
+import cv2
+import cv2.aruco
+```
+`aruco` library has predefined dictionaries of markers, which it uses to detect the given markers
+Let us say the image we have got from the camera is stored in the variable `img`. (We will discuss how to get this in ROS later) 
+
+Ok, so now lets convert this image into grayscale image and store it into another variable `gray`.
+```
+gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+```
 
 
 
