@@ -156,7 +156,6 @@ Congrats! Now we are all set and can start with learning OpenCV!
       #destroys all windows if the key ‘s’ is pressed
       if cv2.waitKey(0) & 0xFF==ord('s'):
               cv2.destroyAllWindows()   
-    
       ```
 
 **Note:** The following 3 modules are not explicitly used in this workshop and are thus a part of Optional Learning.
