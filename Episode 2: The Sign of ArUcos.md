@@ -334,6 +334,7 @@ And finally, we unpack parameters of the marker through:
 ```
 corners, ids, _ = aruco.detectMarkers(gray, aruco_dict, parameters = Parameters)
 ```
+Note that we have used " _ " above because
 
-
+So let us see what are the parameters 
 
