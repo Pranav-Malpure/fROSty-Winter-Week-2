@@ -33,6 +33,8 @@ Alright, so now we understand what ArUco markers are, we need to find a way so t
 
 ## OpenCV
 
+<img src="https://github.com/Pranav-Malpure/fROSty-Winter-Week-2/blob/main/Images/opencv_logo.png" width=320 height=150>
+
 OpenCV (Open-Source Computer Vision Library) is an open-source library that includes several hundreds of computer vision algorithms. It helps us in performing various operations on images very easily.
 
 In our task we will be mainly using ArUco, an OpenCV based library for detecting the markers and navigating through the base. Nevertheless, some basic knowledge of OpenCV might be very useful for some of your future projects in Gazebo and Rviz.
@@ -90,6 +92,8 @@ Congrats! Now we are all set and can start with learning OpenCV!
       **Grayscale:** uses shades of grey to represent intensity </br>
       **RGB:** stores individual values of Red Green Blue and an alpha channel to show transparency </br>
       **HSV (Hue, saturation, value):** an alternate form of RGB colour space that is similar to human vision perception and helpful for image identification.
+
+    <img src="https://github.com/Pranav-Malpure/fROSty-Winter-Week-2/blob/main/Images/GRAY_img.jpg" width="200" height ="200">  <img src="https://github.com/Pranav-Malpure/fROSty-Winter-Week-2/blob/main/Images/BGR_img.png" width="200" height ="200"> <img src="https://github.com/Pranav-Malpure/fROSty-Winter-Week-2/blob/main/Images/HSV_img.jpg" width="200" height ="200">
 
     _Syntax_ - ```cv2.cvtColor( source , conversion_code)``` </br>
     _Parameters_ - </br>
@@ -213,9 +217,13 @@ if cv2.waitKey(0) & 0xFF==ord('s'):
   
   * ####   Practice problems:
 
-    1)	Using the functions that we learned in this module, recreate this iconic ```wallpaper_modified.jpg``` by drawing on ```wallpaper.jpg```.
+    1)	Using the functions that we learned in this module, recreate this iconic ```wallpaper_modified.jpg``` by drawing on ```wallpaper.jpg```. </br>
     
-    2)	Help Sherlock unlock Adler’s phone by using the ```putTEXT``` command over the textboxes. I hope you already know the password
+    <p align="center"> <img src="https://github.com/Pranav-Malpure/fROSty-Winter-Week-2/blob/main/Images/wallpaper_modified.jpg" width="320" height ="200"> </p> </br>
+    
+    2)	Help Sherlock unlock Adler’s phone by using the ```putTEXT``` command over the textboxes. I hope you already know the password </br>
+    
+    <p align="center"> <img src="https://github.com/Pranav-Malpure/fROSty-Winter-Week-2/blob/main/Images/locked.jpg" height="320" width="200"> </p>
 
 **Note:** The following 2 modules are not explicitly used in this workshop and are thus a part of Optional Learning.
 
@@ -251,6 +259,7 @@ if cv2.waitKey(0) & 0xFF==ord('s'):
       if cv2.waitKey(0) & 0xff == ord('s'): 
           cv2.destroyAllWindows()  
       ```
+      
   * ####	Weighted Addition of Images:
 
       This function is just a modification to the addition function that might be helpful in some cases. </br>
@@ -310,7 +319,9 @@ if cv2.waitKey(0) & 0xFF==ord('s'):
   if cv2.waitKey(0) & 0xff == ord('s'):
     cv2.destroyAllWindows()
   ```
-  
+      
+<p align="center"> <img src="https://github.com/Pranav-Malpure/fROSty-Winter-Week-2/blob/main/Images/yinyang_square.jpg" width="320" height ="200"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <img src="https://github.com/Pranav-Malpure/fROSty-Winter-Week-2/blob/main/Images/yinyang_circle.jpg" width="320" height ="200"> </p> </br>
+
   Now we are ready to operate on these two images. </br>
   The syntax and the usage for all of these functions is pretty intuitive and easy to interpret. But do give each of them a try and see the results for yourself. </br>
   
@@ -335,7 +346,9 @@ if cv2.waitKey(0) & 0xFF==ord('s'):
       _Parameters_ – *img:* the image to be complemented
  
  ### Moving forward with OpenCV
-  
+
+<img src="https://github.com/Pranav-Malpure/fROSty-Winter-Week-2/blob/main/Images/I%20am%20not%20done%20yet.gif" height="360" width="500">
+
   You might be wondering the practical applications of using Arithmetic and Bitwise Operations on images. But they have a very specific use in watermarks and logos. Do check out the [official documentation](https://docs.opencv.org/4.x/d0/d86/tutorial_py_image_arithmetics.html) of OpenCV to gain some insights on this.
   
   **This covers our brief introduction to OpenCV.** </br>
@@ -368,6 +381,8 @@ Now that we are familiar with the basics of OpenCV, ArUco and ROS, we can finall
 Unfortunately, in ROS, the format of the images being processed (ROS image Message) is quite different than that used in OpenCV (cv::Mat). This is where the library  cv_bridge comes to the rescue! </br>
 We create a publisher-subscriber model to import and export images out of ROS into OpenCV and back into ROS. 
 
+<p align="center"> <img src="https://github.com/Pranav-Malpure/fROSty-Winter-Week-2/blob/main/Images/cvbridge3.png" width="300" height="350"> </p>
+
 ### Let us start with a simple example.
 
 We create a directory named ```cv_bridge``` and create a python file named ```cv_bridge_example.py```
@@ -375,7 +390,9 @@ We create a directory named ```cv_bridge``` and create a python file named ```cv
 mkdir -p ~/catkin_ws/src/cv_bridge/scripts
 gedit ~/catkin_ws/src/cv_bridge/scripts/cv_bridge_example.py
 ```
+### That's it for Week 2! Cheers!
 
+<img src ="https://github.com/Pranav-Malpure/fROSty-Winter-Week-2/blob/main/Images/sherlock_toast.jpg">
 
 
 
