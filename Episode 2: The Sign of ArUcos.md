@@ -480,7 +480,9 @@ Yes, you guessed correctly. Let's check by executing ``` rostopic list ``` in an
 Camera Sensor is publishing data of ```sensor_msgs/Image``` msg type to ```/turtlebot3_waffle_pi/camera/image_raw``` topic. Let's visualize this data throgh **Rviz**.
 
 Run ```rviz``` in Terminal. Click on Add button, Under tab **By topic** add ```/turtlebot3_waffle_pi/camera/image_raw``` topic. You can see data published on this topic.  
+
 <img src="Images/Rviz_CameraTopic.jpg" width=250 height=400>
+
 Now, we will subscribe ```/turtlebot3_waffle_pi/camera/image_raw``` topic to convert ROS Image data to OpenCV Image data using **cv_bridge**.
 
 Execute the following command in another tab.
@@ -626,7 +628,7 @@ How will you come out of this maze, which is surrounded by walls from all the si
 
 Well, it's Moriarty's maze.
 
-There is a trick- Bot can go through some of the walls present in the maze. But, how bot will found those walls ? 
+There is a trick- Bot can go through some of the walls present in the maze. But, how bot will find those walls ? 
 
 ArUco says hi!! 
 
@@ -634,12 +636,11 @@ AruCo will guide you along the way to solve the maze.
 
 <img src="Images/aruco_guide.jpg" width=600 height=300>
 
-*Blue line* in ArUco marker in "Image Window" is indicating that magic wall 
+**Blue line** in ArUco marker in "Image Window" is indicating that magic wall 
 
 Execute ```rosrun aruco_detection detect_marker.py```. Open new terminal and execute ```roslaunch aruco_detection turtlebot3_teleop_key.launch``` to control bot.
-Now, go and Solve the maze. :)
 
-## add meme moriarty's maze solved by sherlock , moriarty defeat
+Now, go and Solve the maze. :)
 
 ### That's the end of Week 2! Cheers!
 
