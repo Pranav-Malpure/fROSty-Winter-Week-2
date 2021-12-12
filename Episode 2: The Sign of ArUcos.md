@@ -20,11 +20,11 @@ It's fine if you don't understand what parity bits are, as that part is taken ca
 
 Finally, coming back to data bits(read them horizontally), the above grid displays the binary number 1010001010, which is 650 in decimal representation.
 
-Let’s see whether you have understood the above info, find out what number does the below ArUco marker represent.(Remember, the second and fourth columns are data bits.) You can also cross-check whether the parity bits are proper or not.
+Let’s see whether you have understood the above info, find out what number does the below ArUco marker represent.(Remember, the second and fourth columns are data bits.) You can also cross-check whether 
 
 ![This is an image](https://github.com/Pranav-Malpure/fROSty-Winter-Week-2/blob/main/Images/Example%20aruco.png)
 
-*Answer: The number represented by the bits is 100(in decimal)*
+*Answer: The number represented is 100(in decimal)*
 
 Alright, so now we understand what ArUco markers are, we need to find a way so that they are read by the bot through a camera fitted on it. This can be achieved through OpenCV.
 
@@ -40,7 +40,7 @@ In our task we will be mainly using ArUco, an OpenCV based library for detecting
   
   Firstly you need to install OpenCV in your systems. Please refer to this [link](https://docs.opencv.org/4.5.0/d2/de6/tutorial_py_setup_in_ubuntu.html) for instructions to download OpenCV. Build it from source rather than using pre-built Binaries. This installation can take some time so have patience.
 
-  Since we do not require the ROS environment for this section, we recommend you using the **Visual Code Studio** that we installed in Week_0. Using the terminal for practicing code might make reading and editing code a nightmare. We have also provided you with some sample images uploaded in the git folder (images_for_cv2) to practice these commands for yourself.
+  We have provided you with some sample images uploaded in the git folder (images_for_cv2) to practice these commands for yourself.
 
 * #### Setting up VS code
   
@@ -73,7 +73,7 @@ Congrats! Now we are all set and can start with learning OpenCV!
 * #### Displaying an image </br>
     
     Displays the image in a new GUI window.</br>
-    _Syntax_ – ```cv2.imshow( window_name, code )``` </br>
+    _Syntax_ – ```cv2.imshow( window_name, image )``` </br>
     _Parameters_ – </br>
     **window_name:** A string representing the name of the window in which image to be displayed. This will be displayed on the Title Bar of the window. </br>
     **image:** It is the image that is to be displayed. (or rather the numpy array to be displayed)
@@ -289,36 +289,85 @@ Congrats! Now we are all set and can start with learning OpenCV!
 
       ```
 
-
-
-
-
-
-
-    
-    
-    
-    
+### Module 4: Bitwise Operations on Images
+  
+  To better understand this module, we need the two images (yinyang_square and yinyang_circle) uploaded in the ```images_for_cv2``` folder. </br>
+  Just as when we performed arithmetic operations, in bitwise operations the images should be of the same pixel size. </br>
+  
+  Let us first read and observe these two images: </br>
+  ```python
+    import cv2
+    img1 = cv2.imread(“yinyang_square.jpg”)
+    img2 = cv2.imread(“yinyang_circle.jpg”)
+    cv2.imshow(“yinyang_square”, img1)
+    cv2.imshow(“yinyang_circle”, img2)
+    if cv2.waitKey(0) & 0xff == ord(‘s’):
+      cv2.destroyAllWindows()
+  ```
+  
+  Now we are ready to operate on these two images. </br>
+  The syntax and the usage for all of these functions is pretty intuitive and easy to interpret. But do give each of them a try and see the results for yourself. </br>
+  
+  * ####	AND Operation (Conjunction)
+      
+      _Syntax_ - ```cv2.bitwise_and( img1 , img2 )``` </br>
+      _Parameters_ – *img1, img2:* the two images to be conjuncted
+      
+  * ####	OR Operation (Disjunction)
+      
+      _Syntax_ - ```cv2.bitwise_or( img1 , img2 )``` </br>
+      _Parameters_ – *img1, img2:* the two images to be disjuncted
+      
+  * ####	XOR Operation
+      
+      _Syntax_ - ```cv2.bitwise_xor( img1 , img2 )``` </br>
+      _Parameters_ – *img1, img2:* the two images to be XORed
+      
+  * ####	NOT Operation (Complement)
+      
+      _Syntax_ - ```cv2.bitwise_not( img )``` </br>
+      _Parameters_ – *img:* the image to be complemented
+ 
+ ### Moving forward with OpenCV
+  
+  You might be wondering the practical applications of using Arithmetic and Bitwise Operations on images. But they have a very specific use in watermarks and logos. Do check out the [official documentation](https://docs.opencv.org/4.x/d0/d86/tutorial_py_image_arithmetics.html) of OpenCV to gain some insights on this.
+  
+  **This covers our brief introduction to OpenCV.** </br>
+  If you are interested further, we do recommend to explore ```Image Processing```.
+  
+  #### Link to the official python-tutorials: 
+  https://docs.opencv.org/4.x/d2/d96/tutorial_py_table_of_contents_imgproc.html
+  
+  #### geeksforgeeks also provides some amazing tutorials on OpenCV: 
+  https://www.geeksforgeeks.org/opencv-python-tutorial/#images
+  
+  #### Some really cool tutorials on OpenCV that we found on Youtube: 
+  https://www.youtube.com/watch?v=oXlwWbU8l2o&t=7032s </br>
+  https://www.youtube.com/watch?v=01sAkU_NvOY&t=109s
 
 
 
 ## Detecting ArUco Markers 
 
-Since now you have a basic idea of OpenCV, let us see, how can we use it to detect ArUcos. We will use the python library - ArUcos. In the header of your python script, add the following libraries:
+Since you have a basic idea of OpenCV, let us see, how can we use it to detect
 
-```
-import numpy as np
-import math
-import cv2
-import cv2.aruco
-```
-`aruco` library has predefined dictionaries of markers, which it uses to detect the given markers
-Let us say the image we have got from the camera is stored in the variable `img`. (We will discuss how to get this in ROS later) 
 
-Ok, so now lets convert this image into grayscale image and store it into another variable `gray`.
+## cv_bridge
+
+Now that we are familiar with the basics of OpenCV, ArUco and ROS, we can finally talk about integrating these two and performing various operations on images such as image detection.</br>
+
+Unfortunately, in ROS, the format of the images being processed (ROS image Message) is quite different than that used in OpenCV (cv::Mat). This is where the library  cv_bridge comes to the rescue! </br>
+We create a publisher-subscriber model to import and export images out of ROS into OpenCV and back into ROS. 
+
+### Let us start with a simple example.
+
+We create a directory named ```cv_bridge``` and create a python file named ```cv_bridge_example.py```
+```bash
+mkdir -p ~/catkin_ws/src/cv_bridge/scripts
+gedit ~/catkin_ws/src/cv_bridge/scripts/cv_bridge_example.py
 ```
-gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-```
+
+
 
 
 
