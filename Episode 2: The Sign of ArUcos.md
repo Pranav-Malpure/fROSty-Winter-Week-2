@@ -421,7 +421,7 @@ And finally, we unpack parameters of the marker through:
 ```python
 corners, ids, _ = aruco.detectMarkers(gray, aruco_dict, parameters = Parameters)
 ```
-Note that we have used " _ " above because
+Note that we have used " _ " above because there is a third parameter which is returned above and we aren't interested in it.
 
 So let us see what are the parameters:
 - gray : Grayscale image of the sample to be detected.
