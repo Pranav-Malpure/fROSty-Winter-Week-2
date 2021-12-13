@@ -401,7 +401,11 @@ import cv2.aruco
 ```python
 aruco_dict = aruco.Dictionary_get(aruco.DICT_5x5_250)
 ```
-This is an example of a dictionary of 250 ArUco markers of size 5x5. 
+_If due to some reason, you are getting an error in the above line of code, you can replace it by:_
+```python
+aruco_dict = aruco.Dictionary_get(getattr(aruco, f'DICT_{5}X{5}_{250}'))
+```
+Moving on, this is an example of a dictionary of 250 ArUco markers of size 5x5. 
 
 Let us say the image we have got from the camera is stored in the variable `img`. (We will discuss how to get the image from camera in ROS later) \
 Also remember that it is okay to have more than one ArUco markers in an image.
