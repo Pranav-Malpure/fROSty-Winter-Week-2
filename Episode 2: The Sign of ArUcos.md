@@ -1,10 +1,8 @@
 # Episode 2 - The Sign of ArUcos
 
-## Introduction
 
 So till now you have learnt how to control our bot and guide it through the maze using your keyboard. But when we are thinking about challenging Moriarty, we can't take any chances! We have to ensure that the bot is able to navigate it's own way through the maze using some clues present at each nodes of the maze. Holmes has deduced the nature of the clues that would be present. According to him, they would be of the form of markers known as ArUco markers. We need to train our bot to identify and process these. But before that, what exactly is this 'ArCuo markers'? Let's find out...
 
-## Table of Contents
 
 ## ArUco Markers
 ArUco marker is a grid of black and white squares, typically a 5x5 grid, which looks something like this:
@@ -660,7 +658,7 @@ Now, we have seen ArUco detection,
 
 At this stage, you have enough knowledge to escape from the maze created by Moriarty.
 
-Open **maze_aruco.launch** file in launch folder and replace empty.world with maze_aruco.world. Required file is
+Open **maze_aruco.launch** file in launch folder and replace empty.world with maze_aruco.world. Required file is:
 
 ```xml
 <launch>
@@ -691,21 +689,21 @@ How will you come out of this maze, which is surrounded by walls from all the si
 
 Well, it's Moriarty's maze.
 
-There is a trick- Bot can go through some of the walls present in the maze. But, how bot will find those walls ? 
+There is a trick - Bot can go through some of the walls present in the maze. But, how will bot find those walls ? 
 
 ArUco says hi!! 
 
-AruCo will guide you along the way to solve the maze. 
+ArUco will guide you along the way to solve the maze. 
 
 <img src="Images/aruco_guide.jpg" width=600 height=300>
 
-**Blue line** in ArUco marker in "Image Window" is indicating that magic wall 
+The **Blue line** in ArUco marker in "Image Window" is indicating that magic wall 
 
 Execute ```rosrun aruco_detection detect_marker.py```. Open new terminal and execute ```roslaunch aruco_detection turtlebot3_teleop_key.launch``` to control bot.
 
 If you are curious about how these walls are created, don't worry. We will go deeper into these things in coming week.
 
-Now, go and Solve the maze. :)
+Now, go ahead and solve the maze. :)
 
 ### That's the end of Week 2! Cheers!
 
