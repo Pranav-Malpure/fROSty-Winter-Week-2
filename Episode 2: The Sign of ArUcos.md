@@ -394,7 +394,7 @@ Since now you have a basic idea of OpenCV, let us see, how can we use it to dete
 import numpy as np
 import math
 import cv2
-import cv2.aruco
+import cv2.aruco as aruco
 ```
 `aruco` library has predefined dictionaries of markers, which it uses to detect the given markers. We have to create an instance of these dictionaries before we proceed. It is done using:
 
