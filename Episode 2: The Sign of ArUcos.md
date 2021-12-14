@@ -59,7 +59,7 @@ sudo apt-get install python-opencv
 ```
 Use ```pip2``` or ```pip3``` in the above commands, if python3 is configured with one of them.
 
-Open Python IDLE (or IPython) (type ```python3``` in Terminal) and type following codes in Python terminal.
+Type ```python3``` in Terminal to start Python interactive session and type following codes there.
 ```bash
 import cv2 as cv
 print(cv.__version__)
