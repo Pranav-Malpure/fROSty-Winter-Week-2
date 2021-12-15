@@ -504,7 +504,7 @@ Now you have a package aruco_detection, let's run it.
 ```bash
 roslaunch aruco_detection maze_aruco.launch
 ```
-Let's spwan the Turtlebot3 by running follwing command in another tab
+Let's spawn the Turtlebot3 by running following command in another tab
 ```bash
 roslaunch aruco_detection spawn_turtlebot3.launch
 ```
