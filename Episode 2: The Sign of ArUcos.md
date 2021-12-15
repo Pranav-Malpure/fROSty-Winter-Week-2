@@ -40,6 +40,10 @@ In our task we will be mainly using ArUco, an OpenCV based library for detecting
 
 ### Installation and Setup
 
+**Note:** Ubuntu has two python versions Python 2 and Python 3, you can see exact version of them by running ```python``` and ```python3``` in Terminal respectively. ROS (upto Melodic) officially supports only python 2 and NOT python 3. ROS Noetic target Python 3 exclusively. 
+
+Most of you are using ROS Noetic, so we will focus on that only. ROS Melodic users will have to change 'python3' to 'python' in the ```#!/usr/bin/env python3``` in the first line of .py files they are using. 
+
 #### Installing OpenCV </br>
   
  Execute 
@@ -448,7 +452,7 @@ Suppose, we are getting Image data on ```/camera/rgb/image_raw``` topic.
 Here is a node that listens to a ROS image message topic, converts the images into an cv::Mat, displays the image using OpenCV. 
 
 ```python
-#!/usr/bin/env python
+#!/usr/bin/env python3
   
 import rospy
 from sensor_msgs.msg import Image
