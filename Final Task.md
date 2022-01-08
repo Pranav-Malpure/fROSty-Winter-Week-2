@@ -41,8 +41,4 @@ You can compare these files with earlier ones to see, how can you add different 
 Cool!!
 
 In scripts folder, you will see one more file navigator.py 
-
 We have given helper code in it, you have to edit this file to complete task2
-
-For those of you who manage to solve the maze, at the end of the maze, you will find another bot waiting for your bot, as soon as it detects you, you will see a message printed on the terminal which is the password for your workshop completion certificate.
-
