@@ -33,9 +33,11 @@ Edit follwing line of spawn_turtlbot3.launch file.
 ```
 Run spawn_turtlebot3.launch file to spawn burger model. 
 
-As you know, burger model don't have camera sensor. SO, we can not detect ArUco with it. 
-But, we have edited turtlebot3_burger.urdf.xacro and turtlebot3_burger.gazeno.xacro files to add camera plugin to it. So, now burger model can also detect ArUco.
+As you know, burger model don't have camera sensor. So, we can not detect ArUco with it. 
+
+But, we have edited turtlebot3_burger.urdf.xacro and turtlebot3_burger.gazeno.xacro files to add camera plugin to it. So, burger model can also detect ArUco.
 You can compare these files with earlier ones to see, how can you add different sensors to your robot model.
+
 Cool!!
 
 In scripts folder, you will see one more file navigator.py 
