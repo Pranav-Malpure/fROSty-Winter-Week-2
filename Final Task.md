@@ -1,7 +1,10 @@
 # Final Task
 
-Here is the final task of this workshop. We hope you have gone through all the episodes and had a great time learning. If you have any doubts you can reach out to us. 
+So finally we have reached the ultimate task of the workshop.  
 
+![finally](https://github.com/Pranav-Malpure/fROSty-Winter-Week-2/blob/main/W3_Images/benedict-cumberbatch-oh.gif)
+
+We hope you have gone through all the episodes and had a great time learning. If you have any doubts you can reach out to us.
 
 In this task you have to program a bot to autonomously navigate its way out of a maze. Firstly download the maze world file from [add hyperlink](addhyperlink); save it into your world folder of your 'ep3' workspace, and name it as 'final_maze.world'. Next, download the launch file from [add hyperlink](mmm). Save it in you launch folder and name it as final_task.launch.
 
