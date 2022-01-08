@@ -11,7 +11,7 @@ Git clone follwing package. This package is nearly same as the one you saw in we
 Open the Terminal and run following commands-
 ```bash
 cd ~/catkin_ws/src
-git clone -b python3_noetic --single-branch https://github.com/Tejas2910/aruco_detection
+git clone -b python2_melodic --single-branch https://github.com/Tejas2910/aruco_detection
 cd ~/catkin_ws
 catkin_make
 ```
