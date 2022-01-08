@@ -15,7 +15,7 @@ git clone -b python2_melodic --single-branch https://github.com/Tejas2910/aruco_
 cd ~/catkin_ws
 catkin_make
 ```
-# add image
+<img src="Images/Screenshot%20from%202022-01-08%2023-26-41.jpg" width=600 height=300>
 
 ## Some points to Remember
 
